@@ -15,14 +15,25 @@
         $('<li>').text(name).appendTo('#eventlog');
       };
       $(function() {
-        $('button').add('a').disableAfterClick();
+        $('button').add('a').add('input').disableAfterClick();
       });
     </script>
   </head>
 
   <body>
-    <button type="button" onclick="log('button click')">Button</button>
-    <a href="javascript:log('anchor')">Anchor</a>
+    <ul>
+      <li><button type="button" onclick="log('button onclick')">Button</button></li>
+      <li><a href="javascript:log('anchor with javascript href')">Anchor with javascript href</a></li>
+      <li>
+        Form:
+        <form onsubmit="log('form submit'); return false;">
+          <ul>
+            <li><button type="submit" onclick="log('button type=submit')">button type=submit</button></li>
+            <li><input type="submit" value="input type=submit" onclick="log('input type=submit')" /></li>
+          </ul>
+        </form>
+        </li>
+    </ul>
 
     <h3>Log</h3>
     <ol id="eventlog"></ol>
