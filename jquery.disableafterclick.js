@@ -1,5 +1,6 @@
 /**
- * jQuery disableAfterClick plugin 0.0
+ * jQuery disableAfterClick plugin 0.1
+ * http://github.com/orip/jQuery.disableAfterClick
  *
  * Copyright (c) 2009 Ori Peleg, http://orip.org
  *
@@ -30,8 +31,8 @@ $.fn.extend({
 
                 // If we set the 'disabled' attribute immediately, some
                 // browsers won't execute the default action. Setting almost
-                // immediately, after a '0' timeout, fixes this.
-                setTimeout(function() { $this.attr("disabled", "disabled"); }, 0);
+                // immediately, after a 1ms timeout, fixes this.
+                setTimeout(function() { $this.attr("disabled", "disabled"); }, 1);
 
             }
         });
